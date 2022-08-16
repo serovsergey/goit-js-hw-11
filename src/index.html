@@ -7,19 +7,27 @@
     <title>Homework 11</title>
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
-    <div class="gallery">
-      <!-- Карточки изображений -->
+    <header>
+      <form class="search-form" id="search-form">
+        <input
+          class="search-field"
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit" class="search-button"></button>
+      </form>
+      <div>
+        <input type="checkbox" id="infinite-scroll" />
+        <label for="infinite-scroll">Infinite scroll </label>
+      </div>
+    </header>
+    <div class="gallery"></div>
+    <button type="button" class="load-more hidden">Load more</button>
+    <div class="sorry hidden">
+      We're sorry, but you've reached the end of search results.
     </div>
-    <button type="button" class="load-more">Load more</button>
     <script src="./js/index.js" type="module"></script>
   </body>
 </html>

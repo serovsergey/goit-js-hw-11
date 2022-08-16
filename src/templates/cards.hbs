@@ -1,17 +1,25 @@
-<div class="photo-card">
-  <img src="" alt="" loading="lazy" />
-  <div class="info">
-    <p class="info-item">
-      <b>Likes</b>
-    </p>
-    <p class="info-item">
-      <b>Views</b>
-    </p>
-    <p class="info-item">
-      <b>Comments</b>
-    </p>
-    <p class="info-item">
-      <b>Downloads</b>
-    </p>
-  </div>
-</div>
+{{#each this}}
+  <a href="{{largeImageURL}}">
+    <div class="photo-card">
+      <img class="gallery__image" src="{{webformatURL}}" alt="{{tags}}" loading="lazy" />
+      <div class="info">
+        <p class="info-item">
+          <b>Likes</b><br>
+          <span>{{likes}}</span>
+        </p>
+        <p class="info-item">
+          <b>Views</b><br>
+          <span>{{views}}</span>
+        </p>
+        <p class="info-item">
+          <b>Comments</b><br>
+          <span>{{comments}}</span>
+        </p>
+        <p class="info-item">
+          <b>Downloads</b><br>
+          <span>{{downloads}}</span>
+        </p>
+      </div>
+    </div>
+  </a>
+{{/each}}
