@@ -89,6 +89,7 @@ refs.loadBtn.addEventListener('click', loadNextChunk);
 
 refs.form.addEventListener('submit', evt => {
   evt.preventDefault();
+  refs.loadBtn.classList.add('hidden');
   const searchQuery = evt.currentTarget.elements.searchQuery.value.trim().toLowerCase();
   loadNextChunk(searchQuery, true);
 })
