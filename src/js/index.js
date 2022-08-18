@@ -2,6 +2,7 @@ import '../css/styles.css';
 import Notiflix from 'notiflix';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
+// import Handlebars from 'handlebars';
 import cardsTpl from '../templates/cards.hbs';
 import axios from 'axios';
 
@@ -70,7 +71,7 @@ const loadNextChunk = async (q = '', first = false) => {
   refs.gallery.insertAdjacentHTML('beforeend', cardsTpl(data.hits));
   lightbox.refresh();
   if (first) {
-    Notiflix.Notify.info(`Hooray! We have found ${data.total} images(availavle ${data.totalHits})`);
+    Notiflix.Notify.info(`Hooray! We have found ${data.total} images (availavle ${data.totalHits})`);
     scrollToTop();
   } else {
     scrollNext();
@@ -106,3 +107,18 @@ const observer = new IntersectionObserver((entries, observer) => {
   });
 }, { root: null, rootMargin: '0px', threshold: 0.25 });
 observer.observe(refs.loadBtn);
+
+// Handlebars.registerHelper("when", function (operand_1, operator, operand_2, options) {
+//   let operators = {
+//     '===': function (l, r) { return l === r; },
+//     '!==': function (l, r) { return l !== r; },
+//     '>': function (l, r) { return Number(l) > Number(r); },
+//     '<': function (l, r) { return Number(l) < Number(r); },
+//     '||': function (l, r) { return l || r; },
+//     '&&': function (l, r) { return l && r; },
+//     '%': function (l, r) { return (l % r) === 0; }
+//   }
+//   let result = operators[operator](operand_1, operand_2);
+//   if (result) return options.fn(this);
+//   else return options.inverse(this);
+// });
